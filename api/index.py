@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from app.complexity import get_complexity_analysis
+from api.complexity import get_complexity_analysis
 
 app = Flask(__name__)
 
