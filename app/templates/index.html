@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze time and memory complexity of LeetCode solutions.">
+    <title>LeetCode Solutions Complexity Analyzer</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='leetcode-logo.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white shadow-md rounded-lg p-6 max-w-2xl mx-auto">
+            <!-- Header Section -->
+            <a href="#"><img src="{{ url_for('static', filename='leetcode-logo.png') }}" alt="LeetCode Logo" class="logo mb-6"></a>
+            <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">LeetCode Solutions Complexity Analyzer</h1>
+
+            <!-- Redirection Buttons Section -->
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="https://github.com/silvermete0r/QazKosuKosu" target="_blank" class="bg-purple-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-python-plain"></i> Qaz++ Playground</a>
+                <a href="/stars" class="bg-yellow-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-cplusplus-plain"></i> Hall of Fame LC (KZ)</a>
+                <a href="https://t.me/leetcodekz" target="_blank" class="bg-green-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-php-plain"></i> LeetCode TG (KZ)</a>
+            </div>
+
+            <!-- Form for Code Input -->
+            <form method="POST" action="/" class="space-y-6">
+                <div class="form-group">
+                    <label for="code" class="block text-gray-700 font-semibold mb-2">Code:</label>
+                    <textarea id="code" name="code" rows="10" class="w-full p-3 border border-gray-300 rounded-md" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-3 rounded-md hover:bg-blue-600 transition duration-300">Analyze</button>
+            </form>
+
+            <!-- Complexity Analysis Results (if available) -->
+            {% if complexity %}
+                <div class="mt-8 p-4 bg-blue-100 border border-blue-300 rounded-md">
+                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">Complexity Analysis</h2>
+                    <img src="{{ url_for('static', filename='big-o-notation-chart.png') }}" alt="Big O Notation Chart" class="chart mb-6">
+                    <p class="text-lg text-gray-700">Time Complexity: <span class="font-bold text-red-500">{{ complexity.time }}</span></p>
+                    <p class="text-lg text-gray-700">Memory Complexity: <span class="font-bold text-red-500">{{ complexity.memory }}</span></p>
+                    <p class="text-lg text-gray-700">Description: <span class="italic text-yellow-600">{{ complexity.description }}</span></p>
+                    <p class="text-lg text-gray-700">Reference: <a href="https://www.bigocheatsheet.com/" class="text-purple-600" target="_blank">Big O CheatSheet</a></p>
+                </div>            
+            {% endif %}
+
+            <!-- Github Stats -->
+            <div class="flex justify-center space-x-4 mt-8 mb-6">
+                <a href="https://github.com/silvermete0r/https://github.com/silvermete0r/leetcode-solution-complexity-analyzer">
+                    <img src="https://img.shields.io/github/stars/silvermete0r/leetcode-solution-complexity-analyzer?style=for-the-badge">
+                </a> 
+                <a href="https://github.com/silvermete0r/leetcode-solution-complexity-analyzer">
+                    <img src="https://img.shields.io/github/contributors/silvermete0r/leetcode-solution-complexity-analyzer?style=for-the-badge">
+                </a> 
+                <a href="https://github.com/silvermete0r/leetcode-solution-complexity-analyzer">
+                    <img src="https://img.shields.io/github/license/silvermete0r/leetcode-solution-complexity-analyzer?style=for-the-badge">
+                </a>
+            </div>
+
+            <!-- Footer Section -->
+            <div class="text-center mt-8 text-gray-600">
+                Made with ❤ by <a href="https://github.com/silvermete0r" class="text-green-600" target="_blank">@silvermete0r</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
