@@ -1,6 +1,6 @@
 from flask import render_template, request
-from api.complexity import get_complexity_analysis
-from api import app
+from app.complexity import get_complexity_analysis
+from app import app
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
