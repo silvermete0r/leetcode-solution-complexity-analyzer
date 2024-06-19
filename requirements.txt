@@ -1,4 +1,5 @@
 Flask<=3.0.3
 google-generativeai
 python-dotenv
+Flask-Limiter
 Werkzeug<=3.0.3
