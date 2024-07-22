@@ -28,20 +28,13 @@
             <div class="mt-8 p-4 bg-blue-100 border border-blue-300 rounded-md">
                 <h2 class="text-2xl font-semibold mb-4 text-gray-800">Top 10 LeetCode Users in Kazakhstan</h2>
                 <ol class="list-decimal list-inside text-lg text-gray-700">
-                    <a href="https://leetcode.com/kaikaikaikaikai" target="_blank" class="text-red-600"><li>kaikaikaikaikai</li></a>
-                    <a href="https://leetcode.com/rtmkz" target="_blank" class="text-yellow-600"><li>rtmkz</li></a>
-                    <a href="https://leetcode.com/Tima_" target="_blank" class="text-purple-600"><li>Tima_</li></a>
-                    <a href="https://leetcode.com/DimmyT" target="_blank"><li>DimmyT</li></a>
-                    <a href="https://leetcode.com/erel3" target="_blank"><li>erel3</li></a>
-                    <a href="https://leetcode.com/shinbay" target="_blank"><li>shinbay</li></a>
-                    <a href="https://leetcode.com/daurenabd" target="_blank"><li>daurenabd</li></a>
-                    <a href="https://leetcode.com/temirulan" target="_blank"><li>temirulan</li></a>
-                    <a href="https://leetcode.com/proggerkz" target="_blank"><li>proggerkz</li></a>
-                    <a href="https://leetcode.com/404akhan" target="_blank"><li>404akhan</li></a>
+                    {% for username in stars %}
+                        <a href="https://leetcode.com/{{ username }}" target="_blank"><li>{{ username }}</li></a>
+                    {% endfor %}
                 </ol>
             </div>
 
-            <p class="text-lg text-gray-700 mt-4">Note: This list is based on the user's performances in LeetCode contests. Last update: 18 Jun., 2024.</p> 
+            <p class="text-lg text-gray-700 mt-4">Note: This list is based on the user's performances in LeetCode contests. Last update: 22 Jul., 2024.</p> 
             <p class="text-lg text-gray-700 mt-4">Data retrieved from <a href="https://clist.by/resource/leetcode.com/?country=KZ" target="_blank" class="text-purple-600">Clist.by Kazakhstan LeetCode Rankings</a></p>
 
             <!-- Github Stats -->

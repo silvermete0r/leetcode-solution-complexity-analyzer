@@ -3,3 +3,4 @@ google-generativeai
 python-dotenv
 Flask-Limiter
 Werkzeug<=3.0.3
+requests<=2.32.3
