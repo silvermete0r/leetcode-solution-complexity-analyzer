@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="404 Page Not Found">
+    <title>404 - Page Not Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='leetcode-logo.png') }}">
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="text-center">
+        <h1 class="text-6xl font-bold text-gray-800">404</h1>
+        <h2 class="text-2xl font-semibold text-gray-600 mt-2">Oops! Page Not Found</h2>
+        <p class="text-gray-500 mt-4">The page you are looking for does not exist or has been moved.</p>
+        <a href="/" class="mt-6 inline-block bg-purple-500 text-white rounded-lg px-4 py-2 hover:bg-purple-600 transition duration-200">Go to Homepage</a>
+        <img src="https://via.placeholder.com/400x200.png?text=404+Not+Found" alt="404 Illustration" class="mt-8 mx-auto">
+    </div>
+</body>
+</html>

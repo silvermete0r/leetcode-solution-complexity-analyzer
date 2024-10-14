@@ -77,6 +77,7 @@ def get_leetcode_user_stats(username: str) -> dict:
         best_lang = __get_leetcode_user_planguages(username)
         data = {
             "status": "success",
+            "username": username,
             "totalSolved": total_solved,
             "totalQuestions": total_questions,
             "easySolved": easy_solved,
@@ -133,4 +134,4 @@ def __get_leetcode_user_planguages(username):
 
 
 if __name__ == '__main__':
-    print(get_leetcode_user_stats('silvermete0r'))
+    print(get_leetcode_user_stats('nobodyxxxx'))

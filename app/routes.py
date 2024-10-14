@@ -21,6 +21,10 @@ limiter = Limiter(
     default_limits=["10 per day"]  # Default limit: 10 requests per day per IP
 )
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 @app.route('/', methods=['GET', 'POST'])
 @limiter.limit("10 per day")
 def index():
