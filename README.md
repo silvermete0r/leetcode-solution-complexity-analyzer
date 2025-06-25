@@ -2,8 +2,6 @@
 
 LeetCode Solutions Complexity Analyzer based on Gemini Pro!
 
-Open-source application for Kazakhstan LeetCode Community `LeetCode.kz`! 
-
 ## Run locally using Docker
 
 * **Build:** `docker build -t leetcode-complexity-analyzer .`
