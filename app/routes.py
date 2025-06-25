@@ -35,12 +35,6 @@ def index():
         complexity = get_complexity_analysis(code)
 
     return render_template('index.html', complexity = complexity)
-
-@app.route('/stars', methods=['GET'])
-def hall_of_fame():
-    with open('stars.json', 'r') as f:
-        stars = json.load(f)
-    return render_template('stars.html', stars = stars)
  
 @cache.cached(timeout=300)
 @app.route('/profile/<username>', methods=['GET'])

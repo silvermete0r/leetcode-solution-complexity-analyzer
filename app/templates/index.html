@@ -43,7 +43,7 @@
             <!-- Redirection Buttons Section -->
             <div class="flex justify-center space-x-4 mb-6">
                 <a href="https://github.com/silvermete0r/QazKosuKosu" target="_blank" class="bg-purple-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-python-plain"></i> Qaz++ Playground</a>
-                <a href="/stars" class="bg-yellow-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-cplusplus-plain"></i> Hall of Fame LC (KZ)</a>
+                <a href="https://clist.by/resource/leetcode.com/?country=KZ" class="bg-yellow-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-cplusplus-plain"></i> LC Rankings (KZ | Clist.by)</a>
                 <a href="https://t.me/leetcodekz" target="_blank" class="bg-green-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"><i class="devicon-php-plain"></i> LeetCode TG (KZ)</a>
             </div>
 
@@ -96,7 +96,7 @@
             const username = document.getElementById("leetcode-username").value;
             document.getElementById("leetcode-username").value = "";
             if (username) {
-                window.open(`https://leetcode.kz/profile/${username}`, "_blank");
+                window.open(`https://leetcode-solution-complexity-analyzer.vercel.app/profile/${username}`, "_blank");
             } else {
                 alert("Please enter a LeetCode username.");
             }
