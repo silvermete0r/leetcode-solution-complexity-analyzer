@@ -1,6 +1,4 @@
-# LeetCode Kazakhstan Community
-
-LeetCode Solutions Complexity Analyzer based on Gemini Pro!
+# LeetCode Solutions Complexity Analyzer based on Gemini Pro!
 
 ## Run locally using Docker
 
