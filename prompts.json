@@ -1,7 +1,11 @@
 {
-    "check_is_valid_code": "Check if the following code is valid code written by any popular programming language. You need to return just `True` or `False` without any text and signs. Here is the code:\n\n{}",
-    "complexity_options": "O(1), O(2^n), O(n^3), O(n), O(n^2), O(n log n), O(log n), O(n!)",
-    "get_time_complexity": "Analyze the time complexity of the following code. You need to return the Big O notation without any text and signs. OUTPUT ONLY 1 choice from Options: {}! Here is the code:\n\n{}",
-    "get_memory_complexity": "Analyze the space complexity of the following code. You need to return the Big O notation without any text and signs. OUTPUT ONLY 1 choice from Options: {}! Here is the code:\n\n{}",
-    "get_description": "Write a short description why the following code has time complexity of {} and memory complexity of {}. Write in plain text format without markdown! Here is the code:\n\n{}"
+  "check_is_valid_code": "Does the following text contain code written in the {} programming language? Respond with exactly `True` or `False` — no additional text or symbols. Text:\n\n{}",
+
+  "complexity_options": "O(1), O(log n), O(n), O(n log n), O(n^2), O(n^3), O(2^n), O(n!)",
+
+  "get_time_complexity": "Evaluate the time complexity of the following code written in {}. Choose **only one** correct Big O notation from the options: {}. Output only the chosen complexity, no explanation or extra characters. Code:\n\n{}",
+
+  "get_memory_complexity": "Evaluate the space complexity of the following code written in {}. Choose **only one** correct Big O notation from the options: {}. Output only the chosen complexity, no explanation or extra characters. Code:\n\n{}",
+
+  "get_description": "Briefly explain why the following code has a time complexity of {} and a space complexity of {}. Use plain text without any markdown or formatting. Keep the explanation concise and focused. Code:\n\n{}"
 }

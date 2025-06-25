@@ -10,12 +10,12 @@ with open('prompts.json') as f:
 
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
-model_gemini_pro = genai.GenerativeModel('gemini-pro')
+model_gemini_flash = genai.GenerativeModel('gemini-1.5-flash')
 
-def check_is_valid_code(code: str) -> bool:
+def check_is_valid_code(code: str, language: str) -> bool:
     try:
-        prompt = prompts['check_is_valid_code'].format(code)
-        response = model_gemini_pro.generate_content(
+        prompt = prompts['check_is_valid_code'].format(language, code)
+        response = model_gemini_flash.generate_content(
             prompt,
             generation_config = genai.types.GenerationConfig(
                 max_output_tokens = 100, # limit on the total number of words generated
@@ -28,22 +28,22 @@ def check_is_valid_code(code: str) -> bool:
     except Exception as e:
         return False
 
-def get_complexity_analysis(code: str) -> dict:
+def get_complexity_analysis(code: str, language: str) -> dict:
     try:
-        if not check_is_valid_code(code):
+        if not check_is_valid_code(code, language):
             raise ValueError('Invalid code snippet')
-        time_complexity_prompt = prompts['get_time_complexity'].format(prompts['complexity_options'], code)
-        memory_complexity_prompt = prompts['get_memory_complexity'].format(prompts['complexity_options'], code)
-        time_complexity = model_gemini_pro.generate_content(
+        time_complexity_prompt = prompts['get_time_complexity'].format(language, prompts['complexity_options'], code)
+        memory_complexity_prompt = prompts['get_memory_complexity'].format(language, prompts['complexity_options'], code)
+        time_complexity = model_gemini_flash.generate_content(
             time_complexity_prompt,
             generation_config = genai.types.GenerationConfig(
                 max_output_tokens = 100,
-                temperature = 0.5, 
+                temperature = 0.8, 
                 top_p = 0.8, 
                 top_k = 30, 
             )
         ).text
-        memory_complexity = model_gemini_pro.generate_content(
+        memory_complexity = model_gemini_flash.generate_content(
             memory_complexity_prompt,
             generation_config = genai.types.GenerationConfig(
                 max_output_tokens = 100,
@@ -53,7 +53,7 @@ def get_complexity_analysis(code: str) -> dict:
             )
         ).text
         complexity_description_prompt = prompts['get_description'].format(time_complexity, memory_complexity, code)
-        complexity_description = model_gemini_pro.generate_content(
+        complexity_description = model_gemini_flash.generate_content(
             complexity_description_prompt,
             generation_config = genai.types.GenerationConfig(
                 temperature = 0.7, 
@@ -61,6 +61,9 @@ def get_complexity_analysis(code: str) -> dict:
                 top_k = 30, 
             )
         ).text
+        print(f"Time Complexity: {time_complexity}"
+              f"\nMemory Complexity: {memory_complexity}"
+              f"\nDescription: {complexity_description}")
         return {
             'status': 'success',
             'time': time_complexity,
@@ -87,9 +90,12 @@ def main():
                             if dp[i+v] < dp[i] + v:
                                 dp[i+v] = dp[i] + v
                     return max(dp)
+            nums = [1, 2, 3, 4, 5]
+            sol = Solution()
+            print(sol.maxTotalReward(nums))
             '''
-    # print(check_is_valid_code(code))
-    print(get_complexity_analysis(code))
+    print(check_is_valid_code(code, 'python'))
+    # print(get_complexity_analysis(code))
 
 if __name__ == '__main__':
     main()

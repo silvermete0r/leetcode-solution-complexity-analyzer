@@ -31,8 +31,9 @@ def index():
     complexity = None
 
     if request.method == 'POST':
+        language = request.form['language']
         code = request.form['code']
-        complexity = get_complexity_analysis(code)
+        complexity = get_complexity_analysis(code, language)
 
     return render_template('index.html', complexity = complexity)
  
